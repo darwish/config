@@ -1,0 +1,94 @@
+#!/bin/bash
+
+no_launch=0
+bg=
+desktop=
+case $1 in
+	nautilus)
+		class=nautilus
+		cmd=nautilus
+		desktop="--desktop 0"
+		;;
+	chrome)
+		class=google-chrome
+		cmd=google-chrome-stable
+		desktop="--desktop 0"
+		;;
+    firefox)
+		class=Navigator
+		cmd=firefox
+		desktop="--desktop 0"
+		;;
+	sublime)
+		class=subl
+		cmd=subl
+		desktop="--desktop 0"
+		;;
+	code)
+		class=code
+		cmd=code
+		desktop="--desktop 0"
+		;;
+	idea)
+		class=idea
+		cmd=idea
+		desktop="--desktop 0"
+		bg=&
+		;;
+	goland)
+		class=goland
+		desktop="--desktop 0"
+		no_launch=1
+		;;
+	webstorm)
+		class=webstorm
+		desktop="--desktop 0"
+		no_launch=1
+		;;
+	terminal)
+		class=gnome-terminal
+		cmd=gnome-terminal
+		desktop="--desktop 0"
+		;;
+	mattermost)
+		class=mattermost
+		cmd=mattermost
+		desktop="--desktop 0"
+		;;
+	rambox)
+		class=rambox
+		cmd=rambox
+		desktop="--desktop 0"
+		;;
+	outlook)
+		class=outlook.office.com__owa
+		cmd="google-chrome-stable --app=https://outlook.office.com/owa/?realm=kaloom.com"
+		;;
+	teams)
+		class=teams.microsoft.com
+		cmd="google-chrome-stable --app=https://teams.microsoft.com"
+		desktop="--desktop 0"
+		;;
+	*)
+		echo "Undefined launcher: '$1'" >&2
+		exit 1
+		;;
+esac
+
+existing_win=$(xdotool search $desktop --classname "$class")
+
+if [[ -n "$existing_win" ]]; then
+	if [[ "$existing_win" == "$(xdotool getwindowfocus)" ]]; then
+		# Window exists and is focused, minimize it
+		logger -t launchit "Minimizing existing '$class' window"
+		xdotool search $desktop --classname "$class" windowminimize
+	else
+		# Window exists and is not focused, maximize and focus it
+		logger -t launchit "Focusing existing '$class' window"
+		xdotool search $desktop --classname "$class" windowactivate
+	fi
+elif [[ "$no_launch" -eq 0 ]]; then
+	# Window does not exist, create it
+	logger -t launchit "Launching application '$cmd'"
+	$cmd $bg
+fi

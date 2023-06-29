@@ -1,0 +1,19 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "files.associations": {
+        "Vagrantfile": "ruby",
+        "vars": "shellscript",
+        "*.lock": "yaml",
+        "*.json.template": "json"
+    },
+    "files.trimTrailingWhitespace": true,
+    "window.zoomLevel": 0,
+    "editor.renderControlCharacters": true,
+    "editor.renderWhitespace": "all",
+    "window.menuBarVisibility": "toggle",
+    "rewrap.wrappingColumn": 120,
+    "[python]": {
+        "rewrap.wrappingColumn": 100
+    },
+    "workbench.startupEditor": "newUntitledFile"
+}

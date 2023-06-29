@@ -1,0 +1,151 @@
+"  ---------------------------------------------------------------------------
+"  General Settings
+"  ---------------------------------------------------------------------------
+set ignorecase smartcase
+set incsearch
+set hlsearch
+set number
+set scrolloff=10
+set showmode
+set noerrorbells
+set visualbell
+set t_vb=
+
+let mapleader=" "
+
+" Put search results in the middle of the screen
+nnoremap n nzz
+nnoremap N Nzz
+" Remove search highlight
+nnoremap <Leader>/ :nohlsearch<cr>
+
+" Let's make escape better, together.
+inoremap jj <Esc>
+inoremap JJ <Esc>
+inoremap Jj <Esc>
+inoremap jJ <Esc>
+vmap fd <Esc>
+nnoremap Y y$
+
+"Extensions
+set surround
+set argtextobj
+set textobj-entire
+set commentary
+
+Plug 'easymotion/vim-easymotion'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'machakann/vim-highlightedyank'
+Plug 'tpope/vim-surround'
+
+" Have vim handle multiple-cursors shortcuts
+sethandler <A-n> a:vim
+
+" Create newlines without entering insert mode
+nnoremap go o<Esc>k
+nnoremap gO O<Esc>j
+
+"  ---------------------------------------------------------------------------
+"  actions - prefix a
+"  ---------------------------------------------------------------------------
+nmap <leader>aq :action QuickActions<cr>
+nmap <leader>at :action ExpressionTypeInfo<cr>
+nmap <leader>ab :action Back<cr>
+nmap <leader>af :action Forward<cr>
+nmap <leader>as :action NewScratchFile<cr>
+
+" edit ideavim config
+nnoremap <leader>av :e ~/.ideavimrc<CR>
+nnoremap <leader>al :source ~/.ideavimrc<CR>
+
+"  ---------------------------------------------------------------------------
+"  buffers - prefix b
+"  ---------------------------------------------------------------------------
+nmap <leader>bh :action SplitHorizontally<cr>
+nmap <leader>bv :action SplitVertically<cr>
+nmap <leader>bc :action CloseContent<cr>
+nmap <leader>h <c-w>h
+nmap <leader>l <c-w>l
+nmap <leader>k <c-w>k
+nmap <leader>j <c-w>j
+
+"  ---------------------------------------------------------------------------
+"  copy/pasting
+"  ---------------------------------------------------------------------------
+nmap <Leader>y "+y
+nmap <Leader>Y "+Y
+nmap <Leader>d "+d
+nmap <Leader>D "+D
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>y "+y
+vmap <Leader>Y "+Y
+vmap <Leader>d "+d
+vmap <Leader>D "+D
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+
+"  ---------------------------------------------------------------------------
+"  GOTO - prefix g
+"  ---------------------------------------------------------------------------
+nmap <leader>gn :action ViewNavigationBar<cr>
+nmap <leader>gl :action GotoLine<cr>
+nmap <leader>gi :action GotoImplementation<cr>
+nmap <leader>gd :action GotoDeclaration<cr>
+nmap <leader>gt :action GotoTypeDeclaration<cr>
+nmap <leader>gT :action GotoTest<cr>
+nmap <leader>gS :action GotoSuper<cr>
+nmap <leader>gu :action FindUsages<cr>
+nmap <leader>gU :action FindUsagesInFile<cr>
+
+nmap <leader>ga :action GotoAction<cr>
+nmap <leader>gf :action GotoFile<cr>
+nmap <leader>gs :action GotoSymbol<cr>
+nmap <leader>gm :action GoToMenu<cr>
+
+nmap <leader>g0 :action GotoBookmark0<cr>
+nmap <leader>g1 :action GotoBookmark1<cr>
+nmap <leader>g2 :action GotoBookmark2<cr>
+nmap <leader>g3 :action GotoBookmark3<cr>
+nmap <leader>g4 :action GotoBookmark4<cr>
+nmap <leader>g5 :action GotoBookmark5<cr>
+nmap <leader>g6 :action GotoBookmark6<cr>
+nmap <leader>g7 :action GotoBookmark7<cr>
+nmap <leader>g8 :action GotoBookmark8<cr>
+nmap <leader>g9 :action GotoBookmark9<cr>
+
+" Scroll larger amounts with C-j / C-k
+nnoremap gj 15gjzz
+nnoremap gk 15gkzz
+vnoremap gj 15gjzz
+vnoremap gk 15gkzz
+
+"  ---------------------------------------------------------------------------
+"  Jump - prefix <leader> - use of easymotion mapping
+"  ---------------------------------------------------------------------------
+" set easymotion
+" map <leader><leader>a <Plug>(easymotion-jumptoanywhere)
+
+"  ---------------------------------------------------------------------------
+"  Refactoring - r
+"  ---------------------------------------------------------------------------
+nmap <Leader>rm :action Refactorings.QuickListPopupAction<CR>
+nnoremap <leader>rf :action ReformatCode<CR>
+
+"  ---------------------------------------------------------------------------
+"  View  - prefix V
+"  ---------------------------------------------------------------------------
+nmap <leader>Vf :action ToggleFullScreen<cr>
+
+"  ---------------------------------------------------------------------------
+"  Git - prefix v[ersion control] - actions affecting remote are disabled for
+"  now
+"  ---------------------------------------------------------------------------
+nmap <leader>va :action Vcs.QuickListPopupAction<cr>
+nmap <leader>vm :action Git.ContextMenu<cr>
+nmap <leader>vl :action Git.Log<cr>
+nmap <leader>vb :action Git.Branches<cr>
+
+
+"nmap <leader>vp :action Vcs.Push<cr>
+"nmap <leader>vf :action Git.Fetch<cr>

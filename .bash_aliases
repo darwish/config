@@ -2,6 +2,14 @@
 
 
 #=================
+# MX aliases
+#=================
+
+source ~/.bash_aliases-mx
+source ~/code/darwish/config-mx/mcd.sh
+
+
+#=================
 # Git aliases
 #=================
 
@@ -14,6 +22,7 @@ alias gapf='git commit -a --amend --no-edit && git push -f'
 alias gsu='git submodule update'
 alias gsl='git stash list'
 alias gcmp='git checkout master && git pull'
+alias ghpr='gh pr create --assignee=@me --web'
 
 gi() {
     if [[ "${1:0:1}" == "t" ]]; then

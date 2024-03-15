@@ -1,0 +1,24 @@
+[user]
+name = Michael Darwish
+email = michael@darwish.ca
+[core]
+    pager = delta
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+[diff]
+    algorithm = histogram
+    colorMoved = default
+[help]
+	autocorrect = 10
+[interactive]
+    diffFilter = delta --color-only
+[merge]
+	conflictstyle = diff3
+[pull]
+	rebase = true
+[rebase]
+	autosquash = true
+	autostash = true
+[rerere]
+	enabled = true

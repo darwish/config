@@ -27,7 +27,14 @@ alias ghpr='gh pr create --assignee=@me --web'
 gi() {
     if [[ "${1:0:1}" == "t" ]]; then
         newcmd=(git "${1:1}" "${@:2}")
-        read -rp "${newcmd[*]}? [Y/n] "
+
+        # bash and zsh handle the read command slightly differently
+        if [[ -n "$ZSH_VERSION" ]]; then
+            read -r "?${newcmd[*]}? [Y/n] "
+        else
+            read -rp "${newcmd[*]}? [Y/n] "
+        fi
+
         if [[ "$REPLY" == "" || "$REPLY" == "y" || "$REPLY" == "Y" ]]; then
             "${newcmd[@]}"
         fi

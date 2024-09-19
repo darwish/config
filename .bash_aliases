@@ -7,6 +7,8 @@
 
 source ~/.bash_aliases-mx
 source ~/code/darwish/config-mx/mcd.sh
+source ~/code/darwish/config-mx/review.sh
+alias re=review
 
 
 #=================

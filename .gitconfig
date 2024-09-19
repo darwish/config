@@ -6,6 +6,8 @@ email = michael@darwish.ca
 [delta]
     navigate = true    # use n and N to move between diff sections
     light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+    minus-style = syntax "#490309"
+    plus-style = syntax "#033103"
 [diff]
     algorithm = histogram
     colorMoved = default
@@ -22,3 +24,5 @@ email = michael@darwish.ca
 	autostash = true
 [rerere]
 	enabled = true
+[init]
+	defaultBranch = master

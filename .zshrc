@@ -156,8 +156,8 @@ if [[ -z "$ANDROID_HOME" ]]; then
     export ANDROID_HOME="/home/mike/Android/Sdk/"
 fi
 
-if ! grep -qF "/usr/lib/jvm/jdk-11/bin" <<< "$PATH"; then
-    export PATH="/usr/lib/jvm/jdk-11/bin:$PATH"
+if ! grep -qF "/usr/lib/jvm/jdk-17/bin" <<< "$PATH"; then
+    export PATH="/usr/lib/jvm/jdk-17/bin:$PATH"
 fi
 if ! grep -qF "/home/mike/.dotnet/tools" <<< "$PATH"; then
     export PATH="$PATH:/home/mike/.dotnet/tools"
@@ -175,3 +175,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+
+#=================
+# Functions
+#=================
+
+source /home/mike/code/maintainx/shell-scripts/sh/hiring/cherry-pick-take-home.sh
+source /home/mike/code/maintainx/shell-scripts/sh/hiring/create-manager-take-home.sh

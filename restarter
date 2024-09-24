@@ -12,15 +12,25 @@ if [[ "$1" == "--on-restart" ]]; then
 fi
 
 trap do_restart SIGUSR1
+trap kill_children EXIT
+
 do_restart() {
     if [[ -n "$pid" ]]; then
         should_restart=1
-        kill "$pid"
+        kill -- "-$pid"
     fi
 }
 
+kill_children() {
+    code=$?
+    if [[ -n "$pid" ]]; then
+        kill -- "-$pid"
+    fi
+    exit $code
+}
+
 run() {
-    "$@" &
+    setsid "$@" &
     pid=$!
     wait $!
 

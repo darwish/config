@@ -1,0 +1,42 @@
+#!/usr/bin/bash
+
+# Wraps a command so that the SIGUSR1 signal sent to this wrapper process causes the child to be restarted
+
+should_restart=
+on_restart=
+pid=
+
+if [[ "$1" == "--on-restart" ]]; then
+    on_restart=$2
+    shift 2
+fi
+
+trap do_restart SIGUSR1
+do_restart() {
+    if [[ -n "$pid" ]]; then
+        should_restart=1
+        kill "$pid"
+    fi
+}
+
+run() {
+    "$@" &
+    pid=$!
+    wait $!
+
+    # Exit with the child's code if it isn't SIGUSR1 (138)
+    exit_code=$?
+    if [[ $exit_code -ne 138 ]]; then
+        exit $exit_code
+    fi
+}
+
+run "$@"
+while [[ "$should_restart" -eq 1 ]]; do
+    if [[ -n "$on_restart" ]]; then
+        bash -c "$on_restart"
+    fi
+
+    should_restart=
+    run "$@"
+done

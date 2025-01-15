@@ -23,7 +23,7 @@ fi
 #=================
 # Navigation
 #=================
-. ~/scripts/z.sh
+# . ~/scripts/z.sh
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 

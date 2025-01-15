@@ -77,7 +77,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k" # set by `omz`
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=( zsh-autosuggestions zsh-syntax-highlighting)
+plugins=( git zsh-autosuggestions )
 
 source $ZSH/oh-my-zsh.sh
 
@@ -137,12 +137,12 @@ fi
 # z
 #=================
 
-source ~/code/rupa/z/z.sh
-unalias z 2> /dev/null
-z() {
-  [ $# -gt 0 ] && _z "$*" && return
-  cd "$(_z -l 2>&1 | fzf --height 40% --nth 2.. --reverse --inline-info +s --tac --query "${*##-* }" | sed 's/^[0-9,.]* *//')"
-}
+# source ~/code/rupa/z/z.sh
+# unalias z 2> /dev/null
+# z() {
+#   [ $# -gt 0 ] && _z "$*" && return
+#   cd "$(_z -l 2>&1 | fzf --height 40% --nth 2.. --reverse --inline-info +s --tac --query "${*##-* }" | sed 's/^[0-9,.]* *//')"
+# }
 
 
 #=================
@@ -182,3 +182,6 @@ export NVM_DIR="$HOME/.nvm"
 
 source /home/mike/code/maintainx/shell-scripts/sh/hiring/cherry-pick-take-home.sh
 source /home/mike/code/maintainx/shell-scripts/sh/hiring/create-manager-take-home.sh
+
+# Keep this at the end
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

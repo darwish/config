@@ -1,19 +1,16 @@
-// Place your settings in this file to overwrite the default settings
 {
-    "files.associations": {
-        "Vagrantfile": "ruby",
-        "vars": "shellscript",
-        "*.lock": "yaml",
-        "*.json.template": "json"
+    "workbench.editor.enablePreview": false,
+    "security.promptForLocalFileProtocolHandling": false,
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "files.trimTrailingWhitespace": true,
-    "window.zoomLevel": 0,
-    "editor.renderControlCharacters": true,
-    "editor.renderWhitespace": "all",
-    "window.menuBarVisibility": "toggle",
-    "rewrap.wrappingColumn": 120,
-    "[python]": {
-        "rewrap.wrappingColumn": 100
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "workbench.startupEditor": "newUntitledFile"
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.colorCustomizations": {
+        "tab.activeBackground": "#6e646d"
+    }
 }

@@ -165,6 +165,9 @@ fi
 if ! grep -qF "/home/mike/.locize-cli/bin" <<< "$PATH"; then
     export PATH="/home/mike/.locize-cli/bin:$PATH"
 fi
+if ! grep -qF "/home/mike/go/bin" <<< "$PATH"; then
+    export PATH="/home/mike/go/bin:$PATH"
+fi
 
 
 #=================
@@ -182,6 +185,18 @@ export NVM_DIR="$HOME/.nvm"
 
 source /home/mike/code/maintainx/shell-scripts/sh/hiring/cherry-pick-take-home.sh
 source /home/mike/code/maintainx/shell-scripts/sh/hiring/create-manager-take-home.sh
+
+# This speeds up pasting w/ autosuggest
+# https://github.com/zsh-users/zsh-autosuggestions/issues/238#issuecomment-389324292
+pasteinit() {
+  OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
+  zle -N self-insert url-quote-magic # I wonder if you'd need `.url-quote-magic`?
+}
+pastefinish() {
+  zle -N self-insert $OLD_SELF_INSERT
+}
+zstyle :bracketed-paste-magic paste-init pasteinit
+zstyle :bracketed-paste-magic paste-finish pastefinish
 
 # Keep this at the end
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

@@ -88,10 +88,6 @@
         "when": "!inDebugMode"
     },
     {
-        "key": "f5",
-        "command": "workbench.files.action.refreshFilesExplorer"
-    },
-    {
         "key": "ctrl+shift+`",
         "command": "-workbench.action.terminal.new"
     },

@@ -156,6 +156,12 @@ if [[ -z "$ANDROID_HOME" ]]; then
     export ANDROID_HOME="/home/mike/Android/Sdk/"
 fi
 
+if ! grep -qF "/home/mike/Android/Sdk/platform-tools" <<< "$PATH"; then
+    export PATH="/home/mike/Android/Sdk/platform-tools:$PATH"
+fi
+if ! grep -qF "/home/mike/Android/Sdk/emulator" <<< "$PATH"; then
+    export PATH="/home/mike/Android/Sdk/emulator:$PATH"
+fi
 if ! grep -qF "/usr/lib/jvm/jdk-17/bin" <<< "$PATH"; then
     export PATH="/usr/lib/jvm/jdk-17/bin:$PATH"
 fi

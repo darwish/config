@@ -123,5 +123,10 @@
     {
         "key": "ctrl+shift+b",
         "command": "gitlens.diffWithRevisionFrom"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "-github.copilot.generate",
+        "when": "editorTextFocus && github.copilot.activated && !commentEditorFocused && !inInteractiveInput && !interactiveEditorFocused"
     }
 ]

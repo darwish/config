@@ -175,6 +175,8 @@ if ! grep -qF "/home/mike/go/bin" <<< "$PATH"; then
     export PATH="/home/mike/go/bin:$PATH"
 fi
 
+export MX_SLUG=darwish
+
 
 #=================
 # nvm

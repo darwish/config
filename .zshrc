@@ -194,6 +194,11 @@ export NVM_DIR="$HOME/.nvm"
 source /home/mike/code/maintainx/shell-scripts/sh/hiring/cherry-pick-take-home.sh
 source /home/mike/code/maintainx/shell-scripts/sh/hiring/create-manager-take-home.sh
 
+
+#=================
+# Misc
+#=================
+
 # This speeds up pasting w/ autosuggest
 # https://github.com/zsh-users/zsh-autosuggestions/issues/238#issuecomment-389324292
 pasteinit() {
@@ -205,6 +210,12 @@ pastefinish() {
 }
 zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
+
+# Make Ctrl+U behave like in readline
+bindkey \^U backward-kill-line
+
+# Make Ctrl+Space accept and execute the current suggestion
+bindkey '^ ' autosuggest-execute
 
 # Keep this at the end
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

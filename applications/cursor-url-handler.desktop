@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Cursor - URL Handler
+Comment=Cursor is an AI-first coding environment.
+GenericName=Text Editor
+Exec=/home/mike/Applications/cursor.AppImage --open-url %U
+Icon=/home/mike/.local/share/icons/cursor-icon.svg
+Type=Application
+NoDisplay=true
+StartupNotify=true
+Categories=Utility;TextEditor;Development;IDE;
+MimeType=x-scheme-handler/cursor;
+Keywords=cursor;

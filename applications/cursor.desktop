@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=Cursor
+Comment=Cursor is an AI-first coding environment.
+GenericName=Text Editor
+Exec=/home/mike/Applications/cursor.AppImage %F
+Icon=/home/mike/.local/share/icons/cursor-icon.svg
+Type=Application
+StartupNotify=false
+StartupWMClass=Cursor
+Categories=TextEditor;Development;IDE;
+MimeType=application/x-cursor-workspace;
+Terminal=false
+X-AppImage-name-Version=/home/mike/Applications/Cursor-0.47.8-82ef0f61c01d079d1b7e5ab04d88499d5af500e3.deb.glibc2.25-x86_64.AppImage
+

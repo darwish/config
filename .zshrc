@@ -174,6 +174,13 @@ fi
 if ! grep -qF "/home/mike/go/bin" <<< "$PATH"; then
     export PATH="/home/mike/go/bin:$PATH"
 fi
+if ! grep -qF "/home/mike/.local/bin" <<< "$PATH"; then
+    export PATH="/home/mike/.local/bin:$PATH"
+fi
+
+if ! grep -qF "/home/mike/.kube/config-aws" <<< "$KUBECONFIG"; then
+    export KUBECONFIG=$KUBECONFIG:/home/mike/.kube/config-aws
+fi
 
 export MX_SLUG=darwish
 
@@ -193,6 +200,7 @@ export NVM_DIR="$HOME/.nvm"
 
 source /home/mike/code/maintainx/shell-scripts/sh/hiring/cherry-pick-take-home.sh
 source /home/mike/code/maintainx/shell-scripts/sh/hiring/create-manager-take-home.sh
+alias awsp="source _awsp"
 
 
 #=================

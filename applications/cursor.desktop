@@ -3,6 +3,7 @@ Name=Cursor
 Comment=Cursor is an AI-first coding environment.
 GenericName=Text Editor
 Exec=/home/mike/Applications/cursor.AppImage %F
+# Exec=/home/mike/Applications/cursor.AppImage --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform-hint=auto %F
 Icon=/home/mike/.local/share/icons/cursor-icon.svg
 Type=Application
 StartupNotify=false

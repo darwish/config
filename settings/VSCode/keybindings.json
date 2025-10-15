@@ -195,5 +195,33 @@
     {
         "key": "ctrl+i",
         "command": "composerMode.agent"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "composerMode.background"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "composerMode.background"
+    },
+    {
+        "key": "ctrl+pagedown",
+        "command": "workbench.action.compareEditor.nextChange",
+        "when": "textCompareEditorVisible"
+    },
+    {
+        "key": "alt+f5",
+        "command": "-workbench.action.compareEditor.nextChange",
+        "when": "textCompareEditorVisible"
+    },
+    {
+        "key": "ctrl+pageup",
+        "command": "workbench.action.compareEditor.previousChange",
+        "when": "textCompareEditorVisible"
+    },
+    {
+        "key": "shift+alt+f5",
+        "command": "-workbench.action.compareEditor.previousChange",
+        "when": "textCompareEditorVisible"
     }
 ]

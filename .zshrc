@@ -227,3 +227,14 @@ bindkey '^ ' autosuggest-execute
 
 # Keep this at the end
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Make ctrl+w delete whole words like in bash?
+# https://unix.stackexchange.com/a/586378
+my-backward-kill-word () {
+    # Add colon, comma, single/double quotes to word chars
+    local WORDCHARS='*?_-.[]~=/&;!#$%^(){}<>:,"'"'"
+    zle -f kill # Append to the kill ring on subsequent kills.
+    zle backward-kill-word
+}
+zle -N my-backward-kill-word
+bindkey '^w' my-backward-kill-word

@@ -197,14 +197,6 @@
         "command": "composerMode.agent"
     },
     {
-        "key": "ctrl+e",
-        "command": "composerMode.background"
-    },
-    {
-        "key": "ctrl+e",
-        "command": "composerMode.background"
-    },
-    {
         "key": "ctrl+pagedown",
         "command": "workbench.action.compareEditor.nextChange",
         "when": "textCompareEditorVisible"
@@ -223,5 +215,40 @@
         "key": "shift+alt+f5",
         "command": "-workbench.action.compareEditor.previousChange",
         "when": "textCompareEditorVisible"
+    },
+    {
+        "key": "ctrl+shift+enter",
+        "command": "editor.action.inlineDiffs.acceptAll",
+        "when": "editorTextFocus && inlineDiffs.activeEditorWithDiffs"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "-editor.action.inlineDiffs.acceptAll",
+        "when": "editorTextFocus && inlineDiffs.activeEditorWithDiffs"
+    },
+    {
+        "key": "ctrl+pagedown",
+        "command": "editor.action.inlineDiffs.nextChange",
+        "when": "editorTextFocus && inlineDiffs.activeEditorWithDiffs"
+    },
+    {
+        "key": "alt+j",
+        "command": "-editor.action.inlineDiffs.nextChange",
+        "when": "editorTextFocus && inlineDiffs.activeEditorWithDiffs"
+    },
+    {
+        "key": "ctrl+pageup",
+        "command": "editor.action.inlineDiffs.previousChange",
+        "when": "editorTextFocus && inlineDiffs.activeEditorWithDiffs"
+    },
+    {
+        "key": "alt+k",
+        "command": "-editor.action.inlineDiffs.previousChange",
+        "when": "editorTextFocus && inlineDiffs.activeEditorWithDiffs"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "editor.action.inlineDiffs.acceptPartialEdit",
+        "when": "editorTextFocus && inlineDiffs.activeEditorWithDiffs"
     }
 ]

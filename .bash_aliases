@@ -110,6 +110,9 @@ alias nssh='ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no'
 # Print text output for an x509 certificate
 alias cert='openssl x509 -noout -text -in'
 
+# Sometimes Chrome misbehaves
+alias killchrome='pkill -fx /opt/google/chrome/chrome'
+
 # Edit a file (e.g. ~/.bashrc) and immediately source it
 vimsrc() {
     vim "$1" && . "$1"

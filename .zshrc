@@ -156,6 +156,11 @@ if [[ -z "$ANDROID_HOME" ]]; then
     export ANDROID_HOME="/home/mike/Android/Sdk/"
 fi
 
+export BUN_INSTALL="$HOME/.bun"
+export DOTNET_ROOT=/home/mike/.dotnet
+
+. "$HOME/.cargo/env"
+
 if ! grep -qF "/home/mike/Android/Sdk/platform-tools" <<< "$PATH"; then
     export PATH="/home/mike/Android/Sdk/platform-tools:$PATH"
 fi
@@ -165,8 +170,11 @@ fi
 if ! grep -qF "/usr/lib/jvm/jdk-17/bin" <<< "$PATH"; then
     export PATH="/usr/lib/jvm/jdk-17/bin:$PATH"
 fi
-if ! grep -qF "/home/mike/.dotnet/tools" <<< "$PATH"; then
-    export PATH="$PATH:/home/mike/.dotnet/tools"
+if ! grep -qF "$DOTNET_ROOT" <<< "$PATH"; then
+    export PATH="$PATH:$DOTNET_ROOT"
+fi
+if ! grep -qF "$DOTNET_ROOT/tools" <<< "$PATH"; then
+    export PATH="$PATH:$DOTNET_ROOT/tools"
 fi
 if ! grep -qF "/home/mike/.locize-cli/bin" <<< "$PATH"; then
     export PATH="/home/mike/.locize-cli/bin:$PATH"
@@ -177,12 +185,22 @@ fi
 if ! grep -qF "/home/mike/.local/bin" <<< "$PATH"; then
     export PATH="/home/mike/.local/bin:$PATH"
 fi
+if ! grep -qF "$BUN_INSTALL/bin" <<< "$PATH"; then
+    export PATH="$BUN_INSTALL/bin:$PATH"
+fi
+if ! grep -qF "/home/mike/.opencode/bin" <<< "$PATH"; then
+    export PATH="/home/mike/.opencode/bin:$PATH"
+fi
 
 if ! grep -qF "/home/mike/.kube/config-aws" <<< "$KUBECONFIG"; then
     export KUBECONFIG=$KUBECONFIG:/home/mike/.kube/config-aws
 fi
 
 export MX_SLUG=darwish
+
+# For quick-worktree
+export GIT_SLUG=darwish
+export DEFAULT_JIRA_PROJECT=TMPLT
 
 
 #=================
@@ -201,6 +219,7 @@ export NVM_DIR="$HOME/.nvm"
 source /home/mike/code/maintainx/shell-scripts/sh/hiring/cherry-pick-take-home.sh
 source /home/mike/code/maintainx/shell-scripts/sh/hiring/create-manager-take-home.sh
 alias awsp="source _awsp"
+# alias yarn='nice -n 19 yarn'
 
 
 #=================
@@ -238,3 +257,10 @@ my-backward-kill-word () {
 }
 zle -N my-backward-kill-word
 bindkey '^w' my-backward-kill-word
+
+
+# bun completions
+[ -s "/home/mike/.bun/_bun" ] && source "/home/mike/.bun/_bun"
+
+export CANOPY_SOURCE_DIR="/home/mike/code/maintainx-labs/canopy"
+eval "$(/home/mike/.local/bin/mise activate zsh)"

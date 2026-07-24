@@ -42,3 +42,6 @@ z() {
 export LESS="$LESS -QFRX"
 export EDITOR=vim
 
+. "$HOME/.cargo/env"
+
+eval "$(/home/mike/.local/bin/mise activate bash)" # added by https://mise.run/bash

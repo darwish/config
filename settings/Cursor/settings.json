@@ -1,0 +1,41 @@
+{
+  "workbench.editor.enablePreview": false,
+  "security.promptForLocalFileProtocolHandling": false,
+  "[typescript]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode",
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode",
+  },
+  "workbench.colorCustomizations": {
+    "tab.activeBackground": "#6e646d",
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode",
+  },
+  "editor.renderWhitespace": "all",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[sql]": {
+    "editor.defaultFormatter": "adpyke.vscode-sql-formatter",
+  },
+  "typescript.surveys.enabled": false,
+  "javascript.preferences.organizeImports": {},
+  "git.blame.editorDecoration.enabled": true,
+  "typescript.experimental.useTsgo": true,
+  "gitlens.currentLine.enabled": false,
+  "jestrunner.enableDebugLogs": true,
+  "window.autoDetectColorScheme": false,
+  "git.blame.ignoreWhitespace": true,
+  "diffEditor.experimental.showMoves": true,
+}

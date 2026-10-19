@@ -130,7 +130,7 @@ fi
 # fzf
 #=================
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
 #=================
@@ -159,7 +159,7 @@ fi
 export BUN_INSTALL="$HOME/.bun"
 export DOTNET_ROOT=/home/mike/.dotnet
 
-. "$HOME/.cargo/env"
+# . "$HOME/.cargo/env"
 
 if ! grep -qF "/home/mike/Android/Sdk/platform-tools" <<< "$PATH"; then
     export PATH="/home/mike/Android/Sdk/platform-tools:$PATH"
@@ -216,8 +216,8 @@ export DEFAULT_JIRA_PROJECT=TMPLT
 # Functions
 #=================
 
-source /home/mike/code/maintainx/shell-scripts/sh/hiring/cherry-pick-take-home.sh
-source /home/mike/code/maintainx/shell-scripts/sh/hiring/create-manager-take-home.sh
+# source /home/mike/code/maintainx/shell-scripts/sh/hiring/cherry-pick-take-home.sh
+# source /home/mike/code/maintainx/shell-scripts/sh/hiring/create-manager-take-home.sh
 alias awsp="source _awsp"
 # alias yarn='nice -n 19 yarn'
 
@@ -263,4 +263,5 @@ bindkey '^w' my-backward-kill-word
 [ -s "/home/mike/.bun/_bun" ] && source "/home/mike/.bun/_bun"
 
 export CANOPY_SOURCE_DIR="/home/mike/code/maintainx-labs/canopy"
-eval "$(/home/mike/.local/bin/mise activate zsh)"
+
+eval "$(/home/mike/.local/bin/mise activate zsh)" # added by https://mise.run/zsh

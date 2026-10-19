@@ -38,4 +38,6 @@
   "window.autoDetectColorScheme": false,
   "git.blame.ignoreWhitespace": true,
   "diffEditor.experimental.showMoves": true,
+  "extensions.installCooldownHours": 6,
+  "js/ts.experimental.useTsgo": true,
 }
